@@ -15,6 +15,9 @@
 */
 
 .page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     min-inline-size: 320px;
     min-block-size: 100dvb;
     font-family: var(--main-font, sans-serif);
@@ -24,4 +27,208 @@
     background-image: var(--bg-image);
     background-size: cover;
     background-attachment: fixed;
+    margin: 0 auto;
+}
+
+.content-decor {
+    border: 2px solid var(--accent-color, #000);
+    background-color: var(--bg-color);
+    width: var(--section-width);
+    align-self: center;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 100px 0 100px 0;
+    font-family: var(--alt-font, sans-serif);
+    padding-top: 120px;
+    padding-bottom: 20px;
+}
+
+@media (width >= 700px) {
+    .header {
+        padding-top: 136px;
+    }
+}
+
+.header__title {
+    font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.header-text {
+    font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+}
+
+.theme-menu__list {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.theme-menu__button {
+    margin-left: 20px;
+    background-color: transparent;
+    border: none;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.theme-menu__button:hover {
+    opacity: 0.6;
+}
+
+.theme-menu__button:focus {
+    outline: none;
+}
+
+.theme-menu__button:disabled {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.theme-menu__button:disabled::before {
+    content: "▶";
+    position: absolute;
+    margin-left: -20px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.card-title {
+    padding: 6px 10px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.card-image {
+    width: 100%;
+    border: 2px solid var(--accent-color, #000);
+}
+
+.card-label {
+    position: relative;
+}
+
+.card-label::before {
+    content: "</html>";
+    position: absolute;
+    font-family: var(--alt-font, sans-serif);
+    color: var(--accent-color, #000);
+    opacity: 0.5;
+    mix-blend-mode: hard-light;
+    text-shadow: -1px 0 var(--text-shadow-color), 1px 0 var(--text-shadow-color),
+        0 -1px var(--text-shadow-color), 0 1px var(--text-shadow-color);
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 400;
+    inset-inline-end: 12px;
+    inset-block-start: 23px;
+}
+
+@supports (
+    (text-stroke: 1px var(--text-shadow-color)) or
+        (-webkit-text-stroke: 1px var(--text-shadow-color))
+) {
+    .card-label::before {
+        -webkit-text-stroke: 1px var(--text-shadow-color);
+        text-stroke: 1px var(--text-shadow-color);
+        text-shadow: none;
+    }
+}
+
+@media (width >= 700px) {
+    .card-label::before {
+        inset-inline-end: 25px;
+        inset-block-start: 25px;
+    }
+}
+
+.card-text-section {
+    display: flex;
+    flex-direction: column;
+    gap: 27px;
+    padding: 0 26px;
+}
+
+.card-text {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21px;
+}
+
+.like-section {
+    display: flex;
+    gap: 12px;
+    padding: 0 25px 16px 25px;
+    justify-content: flex-end;
+}
+
+.card__icon-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.card__like-button {
+    width: 130px;
+    height: 38px;
+    font-family: var(--alt-font, sans-serif);
+    background-color: transparent;
+    border: 2px solid var(--accent-color, #000);
+    font-size: 14px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.footer {
+    padding: 53px 0 104px 0;
+}
+
+.save-button {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+    width: 306px;
+    height: 80px;
+    font-family: var(--alt-font, sans-serif);
+    background-color: var(--bg-color, #fff);
+    border: 2px solid var(--accent-color, #000);
+    font-size: 14px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+@media (width >= 700px) {
+    .save-button {
+        flex-direction: row;
+        width: 335px;
+        height: 51px;
+    }
+}
+
+.floppy-image {
+    width: 28px;
 }

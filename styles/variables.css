@@ -7,6 +7,7 @@
     --font-weight-text: 400;
     --bg-color: #fff;
     --accent-color: #000;
+    --text-shadow-color: #fff;
     --bg-image: repeating-linear-gradient(
             to right,
             #d3d3d3,
@@ -15,4 +16,5 @@
             transparent 4px
         ),
         repeating-linear-gradient(to bottom, #e7e7e7, #e7e7e7 2px, #1a1a1a 2px, #1a1a1a 4px);
+    --section-width: clamp(375px, 100%, 700px);
 }
