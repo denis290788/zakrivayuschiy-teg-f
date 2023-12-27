@@ -8,6 +8,9 @@
     --bg-color: #fff;
     --accent-color: #000;
     --text-shadow-color: #fff;
+    --hover-color: #fff;
+    --heart-contour-color: #000;
+    --heart-fill-color: #ff0000;
     --bg-image: repeating-linear-gradient(
             to right,
             #d3d3d3,

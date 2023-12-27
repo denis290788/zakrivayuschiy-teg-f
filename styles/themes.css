@@ -11,6 +11,8 @@
     --bg-color: #fff;
     --accent-color: #000;
     --text-shadow-color: #fff;
+    --hover-color: #fff;
+    --heart-contour-color: #000;
     --bg-image: repeating-linear-gradient(
             to right,
             #d3d3d3,
@@ -28,6 +30,8 @@
     --bg-color: #000;
     --accent-color: #00cc14;
     --text-shadow-color: #000;
+    --hover-color: #00cc14;
+    --heart-contour-color: #00cc14;
     --bg-image: repeating-linear-gradient(
             to right,
             #000,
@@ -45,6 +49,8 @@
         --bg-color: #000;
         --accent-color: #00cc14;
         --text-shadow-color: #000;
+        --hover-color: #00cc14;
+        --heart-contour-color: #00cc14;
         --bg-image: repeating-linear-gradient(
                 to right,
                 #000,

@@ -86,14 +86,33 @@
 
 .theme-menu__button:hover {
     opacity: 0.6;
+    transition: opacity 0.3s ease;
 }
 
 .theme-menu__button:focus {
     outline: none;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+.theme-menu__button::after {
+    content: "";
+    display: block;
+    height: 2px;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    background-color: var(--accent-color);
+    opacity: 0.6;
+    transform-origin: left;
+}
+
+.theme-menu__button:focus-visible::after {
+    transform: scaleX(1);
 }
 
 .theme-menu__button:disabled {
     opacity: 0.6;
+    transition: opacity 0.3s ease;
     pointer-events: none;
 }
 
@@ -101,6 +120,21 @@
     content: "▶";
     position: absolute;
     margin-left: -20px;
+    animation: active-theme 0.5s ease-in-out infinite;
+}
+
+@keyframes active-theme {
+    0% {
+        translate: 0;
+    }
+
+    50% {
+        translate: 4px;
+    }
+
+    100% {
+        translate: 0;
+    }
 }
 
 .content {
@@ -191,6 +225,7 @@
 }
 
 .card__like-button {
+    position: relative;
     width: 130px;
     height: 38px;
     font-family: var(--alt-font, sans-serif);
@@ -201,12 +236,71 @@
     cursor: pointer;
 }
 
+.card__like-button::after {
+    content: "";
+    position: absolute;
+    inset: 0 0 -1px 0;
+    transform: scaleX(0);
+    transition: transform 0.5s ease-in-out;
+    background-color: var(--accent-color);
+    transform-origin: left;
+}
+
+.card__like-button:hover::after {
+    transform: scaleX(1);
+}
+
+.button__text {
+    position: relative;
+    z-index: 2;
+    color: var(--hover-color);
+    mix-blend-mode: difference;
+}
+
+.card__like-button:focus {
+    outline: none;
+}
+
+.card__like-button:focus-visible {
+    box-shadow: 2px 2px 0 var(--accent-color);
+    transition: box-shadow 0.3s ease;
+}
+
+.card__icon-button {
+    width: 41px;
+    height: 38px;
+    border: 2px solid transparent;
+}
+
+.like-icon {
+    transform: translate(-7px, -2px);
+}
+
+.sparks {
+    opacity: 0;
+}
+
+.card__icon-button:focus {
+    outline: none;
+}
+
+.card__icon-button:focus-visible {
+    border-color: var(--accent-color);
+    transition: border-color 0.3s ease;
+}
+
+.card__icon-button:hover .like-icon .heart .core {
+    fill: var(--heart-contour-color);
+    transition: fill 3s linear;
+}
+
 .footer {
     padding: 53px 0 104px 0;
 }
 
 .save-button {
     display: flex;
+    position: relative;
     flex-direction: column;
     gap: 8px;
     justify-content: center;
@@ -221,6 +315,29 @@
     cursor: pointer;
 }
 
+.save-button::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: scaleX(0);
+    transition: transform 0.5s ease-in-out;
+    background-color: var(--accent-color);
+    transform-origin: left;
+}
+
+.save-button:hover::after {
+    transform: scaleX(1);
+}
+
+.save-button:focus {
+    outline: none;
+}
+
+.save-button:focus-visible {
+    box-shadow: 2px 2px 0 var(--accent-color);
+    transition: box-shadow 0.3s ease;
+}
+
 @media (width >= 700px) {
     .save-button {
         flex-direction: row;
@@ -230,5 +347,15 @@
 }
 
 .floppy-image {
+    position: relative;
+    z-index: 2;
+    color: var(--hover-color);
+    mix-blend-mode: difference;
     width: 28px;
+}
+
+@media (width >= 700px) {
+    .floppy-image {
+        width: 21px;
+    }
 }
