@@ -155,18 +155,22 @@
     gap: 25px;
 }
 
+.card-img-section {
+    position: relative;
+    border-top: 2px solid var(--accent-color, #000);
+    border-bottom: 2px solid var(--accent-color, #000);
+}
+
 .card-image {
+    display: block;
     width: 100%;
-    border: 2px solid var(--accent-color, #000);
+    object-fit: contain;
+    object-position: center;
 }
 
 .card-label {
-    position: relative;
-}
-
-.card-label::before {
-    content: "</html>";
     position: absolute;
+    z-index: 3;
     font-family: var(--alt-font, sans-serif);
     color: var(--accent-color, #000);
     opacity: 0.5;
@@ -430,4 +434,96 @@
     .floppy-image {
         width: 21px;
     }
+}
+
+.safe-dialog::backdrop {
+    background: var(--accent-color, #000);
+    opacity: 0.75;
+}
+
+.safe-dialog:not([open]) {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.safe-dialog {
+    position: fixed;
+    inset: 0;
+    padding: 32px 42px;
+    width: 341px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    border: 2px solid var(--accent-color, #000);
+    background-color: var(--bg-color, #fff);
+    font-family: var(--alt-font, sans-serif);
+    color: var(--accent-color, #000);
+}
+
+@media (width >= 700px) {
+    .safe-dialog {
+        padding: 31.5px 32.5px;
+        width: 357px;
+    }
+}
+
+.dialog-notification {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.safe-dialog .floppy-image {
+    width: 77px;
+}
+
+.dialog-message {
+    font-size: 14px;
+    font-weight: var(--font-weight-text, 400);
+    line-height: 150%;
+    text-transform: uppercase;
+}
+
+.dialog-button {
+    display: flex;
+    justify-content: center;
+    padding: 9px 17px;
+    border: 2px solid var(--accent-color, #000);
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.dialog-button__text {
+    font-size: 14px;
+    font-weight: var(--font-weight-text, 400);
+    line-height: 90%;
+    text-transform: uppercase;
+}
+
+.filter-1 {
+    filter: invert(0.7);
+}
+
+.filter-2 {
+    filter: hue-rotate(-45deg);
+}
+
+.filter-3 {
+    filter: sepia(80%);
+}
+
+.filter-4 {
+    filter: saturate(158%);
+}
+
+.filter-5 {
+    filter: grayscale(0.8);
+}
+
+.filter-6 {
+    filter: contrast(80%);
+}
+
+.filter-7 {
+    filter: invert(0.7) saturate(140%);
 }
