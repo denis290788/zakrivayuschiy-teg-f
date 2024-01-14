@@ -13,6 +13,7 @@
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
 
+/* анимация стрелочки у активной темы */
 @keyframes active-theme {
     0% {
         translate: 0;
@@ -27,6 +28,7 @@
     }
 }
 
+/* анимация частей svg сердца */
 .like-icon .core {
     fill: transparent;
     transition: fill 0.3s 0.03s linear;
@@ -62,6 +64,7 @@
     transition: fill 0.1s linear;
 }
 
+/* анимация закраски сердца когда поставлен лайк */
 .like-icon.is-liked .core {
     fill: var(--heart-fill-color);
     transition: fill 0.3s linear;
@@ -77,6 +80,7 @@
     transition: fill 0.3s 0.06s linear;
 }
 
+/* анимация увеличения svg когда ставится лайк */
 .like-icon.is-liked .heart {
     transform-origin: center;
     animation: scale-animation 0.3s ease-in 0.1s 1;
@@ -91,10 +95,12 @@
     }
 }
 
+/* для искр у сердца прозрачный цвет */
 .like-icon .sparks {
     opacity: 0;
 }
 
+/* анимация цвета у сердца когда поставили лайк */
 .like-icon.is-liked .sparks {
     animation: sparks-animation 0.3s ease-in 0.3s 1;
 }

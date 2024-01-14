@@ -58,6 +58,7 @@
                         <p class="card-text">Место для ваших воспоминаний о начале обучения.</p>
                     </div>
                     <div class="like-section">
+                        <!-- лого сердца добавлен svg-иконка инлайново -->
                         <button type="button" class="card__icon-button">
                             <svg
                                 class="like-icon"
@@ -68,6 +69,7 @@
                                 xmlns="http://www.w3.org/2000/svg"
                             >
                                 <g class="heart">
+                                    <!-- для элементов сердца добавлены разные классы для анимаций -->
                                     <path
                                         class="contour"
                                         d="M12 6H9V9H12V6ZM15 6H12V9H15V6ZM9 9H6V12H9V9ZM9 12H6V15H9V12ZM9 15H6V18H9V15ZM18 6H15V9H18V6ZM12 18H9V21H12V18ZM15 21H12V24H15V21ZM18 24H15V27H18V24ZM27 6H30V9H27V6ZM24 6H27V9H24V6ZM30 9H33V12H30V9ZM30 12H33V15H30V12ZM30 15H33V18H30V15ZM21 6H24V9H21V6ZM27 18H30V21H27V18ZM24 21H27V24H24V21ZM21 24H24V27H21V24ZM21 27H18V30H21V27ZM21 9H18V12H21V9Z"
@@ -549,18 +551,22 @@
             </section>
         </main>
         <footer class="footer">
+            <!-- при нажатии появляется модальное окно -->
             <button
                 class="save-button"
                 type="button"
                 onclick="window['dialog-id'].showModal()"
                 aria-controls="dialog-id"
             >
+                <!-- svg дискеты добавили ссылкой на файл svg -->
                 <svg class="floppy-image" viewBox="0 0 39 39">
                     <use href="./svg/floppy.svg#floppy" />
                 </svg>
                 <span class="button__text">Сохранить на память</span>
             </button>
         </footer>
+
+        <!-- разметка диалогового окна -->
         <dialog id="dialog-id" class="safe-dialog">
             <div class="dialog-notification">
                 <svg class="floppy-image" viewBox="0 0 39 39">

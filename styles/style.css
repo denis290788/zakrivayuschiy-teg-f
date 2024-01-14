@@ -89,6 +89,7 @@
     transition: opacity 0.3s ease;
 }
 
+/* при фокусе появляется подчеркивание (как псевдоэлемент) */
 .theme-menu__button:focus {
     outline: none;
     opacity: 0.6;
@@ -106,6 +107,7 @@
     transform-origin: left;
 }
 
+/* при фокусе псевдожлемент меняет свою ширину по оси Х до ширины родителя */
 .theme-menu__button:focus-visible::after {
     transform: scaleX(1);
 }
@@ -161,6 +163,7 @@
     }
 }
 
+/* стиль для лэйбла у картинки */
 .card-label {
     position: absolute;
     z-index: 3;
@@ -168,6 +171,8 @@
     color: var(--accent-color, #000);
     opacity: 0.5;
     mix-blend-mode: hard-light;
+
+    /* задали обводку для лэйбла если браузен не поддерживает text-stroke*/
     text-shadow: -1px 0 var(--text-shadow-color), 1px 0 var(--text-shadow-color),
         0 -1px var(--text-shadow-color), 0 1px var(--text-shadow-color);
     text-transform: uppercase;
@@ -177,6 +182,7 @@
     inset-block-start: 23px;
 }
 
+/* задали обводку для лэйбла через text-stroke*/
 @supports (
     (text-stroke: 1px var(--text-shadow-color)) or
         (-webkit-text-stroke: 1px var(--text-shadow-color))
@@ -233,6 +239,7 @@
     cursor: pointer;
 }
 
+/* псевдоэлемент для ховера с нулевой шириной  */
 .card__like-button::after {
     content: "";
     position: absolute;
@@ -243,6 +250,7 @@
     transform-origin: left;
 }
 
+/* при наведении меняем ширину у псевдоэлемента */
 .card__like-button:hover::after {
     transform: scaleX(1);
 }
@@ -251,6 +259,7 @@
     position: relative;
     z-index: 2;
     color: var(--hover-color);
+    /* mix-blend-mode для смены цвета при наведении на кнопку */
     mix-blend-mode: difference;
 }
 
@@ -258,6 +267,7 @@
     outline: none;
 }
 
+/* плавно добавляем при фокусе тень */
 .card__like-button:focus-visible {
     box-shadow: 2px 2px 0 var(--accent-color);
     transition: box-shadow 0.3s ease;
@@ -344,16 +354,19 @@
     }
 }
 
+/* когда открыто диалоговое окно меняется прозрачность у фона сзади */
 .safe-dialog::backdrop {
     background: var(--accent-color, #000);
     opacity: 0.75;
 }
 
+/* скрыли диалоговое окно когда оно не открыто */
 .safe-dialog:not([open]) {
     opacity: 0;
     pointer-events: none;
 }
 
+/* стили для диалогового окна */
 .safe-dialog {
     position: fixed;
     inset: 0;
@@ -435,6 +448,7 @@
     text-transform: uppercase;
 }
 
+/* задали уникальные фильтры для картинок */
 .filter-1 {
     filter: invert(0.7);
 }
